@@ -5,7 +5,7 @@ title: Broker <span class="name">build-infra</span>
 <div class="title-bar">
   <h1>{{page.title}}</h1>
   <nav>
-    <a href="" class="small-button">Go to console</a>
+    <a href="" class="small-button">Go to the broker console</a>
     <a href="" class="small-button">Delete</a>
   </nav>
 </div>
