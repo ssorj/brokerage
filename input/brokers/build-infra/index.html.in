@@ -72,7 +72,7 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
   </div>
   <div id="details">
     <div class="section-bar-top">
-      <h2>Details</h2>
+      <h2>Properties</h2>
       <nav>
         <a href="" class="small-button">Edit properties</a>
       </nav>
@@ -84,7 +84,7 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
     <div class="section-bar-top">
       <h2>Client certificates</h2>
       <nav>
-        <a href="" class="small-button">Upload client certificate</a>
+        <a href="" class="small-button">Upload a client certificate</a>
       </nav>
     </div>
 
@@ -94,7 +94,7 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
     <div class="section-bar-top">
       <h2>Addresses</h2>
       <nav>
-        <a href="" class="small-button">Create address</a>
+        <a href="" class="small-button">Create an address</a>
       </nav>
     </div>
 
@@ -104,7 +104,7 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
     <div class="section-bar-top">
       <h2>Address settings</h2>
       <nav>
-        <a href="" class="small-button">Create address setting</a>
+        <a href="" class="small-button">Create an address setting</a>
       </nav>
     </div>
 
