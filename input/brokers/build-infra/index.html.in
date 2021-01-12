@@ -1,0 +1,113 @@
+---
+title: Broker <span class="name">build-infra</span>
+---
+
+<div class="title-bar">
+  <h1>{{page.title}}</h1>
+  <nav>
+    <a href="" class="small-button">Go to console</a>
+    <a href="" class="small-button">Delete</a>
+  </nav>
+</div>
+
+<div class="tabs">
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#details">Details</a>
+    <a href="#client-certificates">Client certificates</a>
+    <a href="#addresses">Addresses</a>
+    <a href="#address-settings">Address settings</a>
+  </nav>
+  <div id="overview">
+    <!-- Certs XXX -->
+
+    <h2>Connecting to this broker</h2>
+
+    <ol>
+      <li>
+        <p>{{lipsum(15)}}</p>
+
+        <nav>
+          <a href="" class="small-button">Download the broker certificate</a>
+        </nav>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>{{lipsum(15)}}</p>
+
+        <pre>$ keytool -import -alias broker -keystore ~/client.ts -file <i>&lt;broker-certificate-file&gt;</i>
+$ keytool -genkey -alias broker -keyalg RSA -keystore ~/client.ks
+$ keytool -export -alias broker -keystore ~/client.ks -file ~/client-certificate.pem</pre>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>{{lipsum(15)}}</p>
+
+        <nav>
+          <a href="" class="small-button">Upload the client certificate</a>
+        </nav>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>{{lipsum()}}</p>
+
+        <pre><a href="">amqps://build-infra.example.net:443?transport.keyStoreLocation=~/client.ks&amp;transport.keyStorePassword=&lt;password&gt;&amp;transport.trustStoreLocation=~/client.ts&amp;transport.trustStorePassword=&lt;password&gt</a></pre>
+      </li>
+    </ol>
+
+    <h2>Sending and receiving messages</h2>
+
+    <p>{{lipsum()}}</p>
+
+    <pre>$ bin/artemis producer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i>
+$ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i></pre>
+
+</pre>
+  </div>
+  <div id="details">
+    <div class="section-bar-top">
+      <h2>Details</h2>
+      <nav>
+        <a href="" class="small-button">Edit properties</a>
+      </nav>
+    </div>
+
+    {{broker_properties}}
+  </div>
+  <div id="client-certificates">
+    <div class="section-bar-top">
+      <h2>Client certificates</h2>
+      <nav>
+        <a href="" class="small-button">Upload client certificate</a>
+      </nav>
+    </div>
+
+    {{client_certificate_table}}
+  </div>
+  <div id="addresses">
+    <div class="section-bar-top">
+      <h2>Addresses</h2>
+      <nav>
+        <a href="" class="small-button">Create address</a>
+      </nav>
+    </div>
+
+    {{address_table}}
+  </div>
+  <div id="address-settings">
+    <div class="section-bar-top">
+      <h2>Address settings</h2>
+      <nav>
+        <a href="" class="small-button">Create address setting</a>
+      </nav>
+    </div>
+
+    {{address_setting_table}}
+  </div>
+</div>
