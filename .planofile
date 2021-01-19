@@ -20,3 +20,22 @@
 from transom_commands import *
 
 app.set_default_command("serve", port=9090, force=True)
+
+view_html = """
+---
+title: {type_title} <span class="name">{object_name}</span>
+---
+
+<div class="title-bar">
+  <h1>{{page.title}}</h1>
+  <nav>
+    <a href="" class="small-button">Delete</a>
+  </nav>
+</div>
+"""
+
+@command
+def generate_view_stub(app, type_name, object_name, output_path):
+    type_title = capitalize(type_name)
+
+    write(output_path, view_html.format(**locals()))

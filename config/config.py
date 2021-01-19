@@ -1,7 +1,7 @@
 site_url = ""
 
 def path_nav(page):
-    separator = "<span class=\"path-separator\">›</span>"
+    separator = "<span class=\"path-separator\">&#8250;</span>"
     links = separator.join(list(page.path_nav_links)[1:])
 
     return f"<nav class=\"path-nav\">{links}</nav>"
@@ -36,19 +36,19 @@ broker_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/client-certificates/xxx/index.html\">{value}</a>"
+        value = f"<a href=\"/brokers/build-infra/clients/build-infra-36cd/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Status", "Connections", "Created"
+headings = "Name", "Connections", "Expires", "Created"
 
 data = (
-    ("build-infra-36cd", "OK", 12, "3 minutes ago"),
-    ("build-infra-4ed8", "OK", 2, "4 hours ago"),
-    ("build-infra-e0d7", "Disabled", 0, "1/1/2020"),
+    ("build-infra-36cd", 12, "12/21/2021", "3 minutes ago"),
+    ("build-infra-4ed8", 2, "Never", "4 hours ago"),
+    ("build-infra-e0d7", 0, "-", "1/1/2020"),
 )
 
-client_certificate_table = html_table(data, headings=headings, cell_fn=cell)
+client_table = html_table(data, headings=headings, cell_fn=cell)
 
 def cell(column_index, value):
     if column_index == 0:
@@ -56,21 +56,22 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Status", "Routing type", "Created"
+headings = "Name", "Routing type", "Auto-create queues?", "Auto-delete queues?", "Created"
 
 data = (
-    ("jobs", "OK", "Anycast", "3 minutes ago"),
-    ("notifications", "OK", "Multicast", "4 hours ago"),
-    ("agents.alpha", "OK", "Multicast", "1/1/2020"),
-    ("agents.beta", "OK", "Multicast", "1/1/2020"),
+    ("jobs", "Anycast", "Yes", "Yes", "3 minutes ago"),
+    ("notifications", "Multicast", "Yes", "Yes", "4 hours ago"),
+    ("agents.alpha", "Multicast", "Yes", "Yes", "1/1/2020"),
+    ("agents.beta", "Multicast", "Yes", "Yes", "1/1/2020"),
 )
 
 address_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "jobs"),
-    ("Status", "OK"),
     ("Routing type", "Anycast"),
+    ("Auto-create queues?", "Yes"),
+    ("Auto-delete queues?", "Yes"),
     ("Created", "3 minutes ago"),
 )
 
@@ -82,11 +83,11 @@ def cell(column_index, value):
 
     return f"<td>{value}</td>"
 
-headings = "Address match", "Auto-create queues?", "Auto-delete queues?", "Created"
+headings = "Address match", "Routing type", "Auto-create addresses?", "Auto-create queues?", "Auto-delete queues?", "Created"
 
 data = (
-    ("# (all addresses)", "Yes", "Yes", "3 minutes ago"),
-    ("agents.#", "Yes", "No", "3/15/2020"),
+    ("#", "Anycast", "Yes", "Yes", "Yes", "3 minutes ago"),
+    ("agents.#", "Multicast", "Yes", "Yes", "No", "3/15/2020"),
 )
 
 address_setting_table = html_table(data, headings=headings, cell_fn=cell)

@@ -550,8 +550,8 @@ span.material-icons-outlined {
 .tabs > nav > a {
     display: inline-block;
     text-align: center;
-    padding: 0.4em 2em;
-    margin-right: -4px;
+    padding: 0.4em 0;
+    margin-right: 2em;
     font-weight: 300;
     color: black;
     letter-spacing: 0.3px;
@@ -574,4 +574,10 @@ table.properties td:nth-child(1) {
     font-weight: 300;
     min-width: 8em;
     padding-right: 2em;
+}
+
+/* --- */
+
+pre i {
+    color: #c67;
 }

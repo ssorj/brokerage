@@ -14,13 +14,11 @@ title: Broker <span class="name">build-infra</span>
   <nav>
     <a href="#overview">Overview</a>
     <a href="#details">Details</a>
-    <a href="#client-certificates">Client certificates</a>
+    <a href="#clients">Clients</a>
     <a href="#addresses">Addresses</a>
     <a href="#address-settings">Address settings</a>
   </nav>
   <div id="overview">
-    <!-- Certs XXX -->
-
     <h2>Connecting to this broker</h2>
 
     <ol>
@@ -31,20 +29,19 @@ title: Broker <span class="name">build-infra</span>
           <a href="" class="small-button">Download the broker certificate</a>
         </nav>
 
+        <p>{{lipsum(25)}}</p>
+
+        <pre>$ keytool -import -alias broker -keystore ~/client.ts -file <i>&lt;broker-certificate-file&gt;</i></pre>
+
         <p></p>
       </li>
 
       <li>
         <p>{{lipsum(15)}}</p>
 
-        <pre>$ keytool -import -alias broker -keystore ~/client.ts -file <i>&lt;broker-certificate-file&gt;</i>
-$ keytool -genkey -alias broker -keyalg RSA -keystore ~/client.ks
-$ keytool -export -alias broker -keystore ~/client.ks -file ~/client-certificate.pem</pre>
+        <pre>$ keytool -genkey -alias broker -keyalg RSA -keystore ~/client.ks
+$ keytool -export -alias broker -keystore ~/client.ks -file <i>&lt;client-certificate-file&gt;</i></pre>
 
-        <p></p>
-      </li>
-
-      <li>
         <p>{{lipsum(15)}}</p>
 
         <nav>
@@ -57,7 +54,9 @@ $ keytool -export -alias broker -keystore ~/client.ks -file ~/client-certificate
       <li>
         <p>{{lipsum()}}</p>
 
-        <pre><a href="">amqps://build-infra.example.net:443?transport.keyStoreLocation=~/client.ks&amp;transport.keyStorePassword=&lt;password&gt;&amp;transport.trustStoreLocation=~/client.ts&amp;transport.trustStorePassword=&lt;password&gt</a></pre>
+        <pre>AMQP: <a href="">amqps://build-infra.example.net:443?transport.keyStoreLocation=~/client.ks&amp;transport.keyStorePassword=&lt;password&gt;&amp;transport.trustStoreLocation=~/client.ts&amp;transport.trustStorePassword=&lt;password&gt</a>
+Core: tcp://build-infra.example.net...
+MQTT: tcp://build-infra.example.net...</pre>
       </li>
     </ol>
 
@@ -80,15 +79,15 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
 
     {{broker_properties}}
   </div>
-  <div id="client-certificates">
+  <div id="clients">
     <div class="section-bar-top">
-      <h2>Client certificates</h2>
+      <h2>Clients</h2>
       <nav>
         <a href="" class="small-button">Upload a client certificate</a>
       </nav>
     </div>
 
-    {{client_certificate_table}}
+    {{client_table}}
   </div>
   <div id="addresses">
     <div class="section-bar-top">
