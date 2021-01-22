@@ -4,7 +4,8 @@ site_url = os.environ.get("SITE_URL", "")
 
 def path_nav(page):
     separator = "<span class=\"path-separator\">&#8250;</span>"
-    links = separator.join(list(page.path_nav_links)[1:])
+    links = [x.replace("href=\"", f"href=\"{site_url}") for x in list(page.path_nav_links)[1:]]
+    links = separator.join(links)
 
     return f"<nav class=\"path-nav\">{links}</nav>"
 
