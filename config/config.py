@@ -1,4 +1,6 @@
-site_url = ""
+import os
+
+site_url = os.environ.get("SITE_URL", "")
 
 def path_nav(page):
     separator = "<span class=\"path-separator\">&#8250;</span>"
@@ -8,7 +10,7 @@ def path_nav(page):
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -36,7 +38,7 @@ broker_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/clients/build-infra-36cd/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/clients/build-infra-36cd/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -52,7 +54,7 @@ client_table = html_table(data, headings=headings, cell_fn=cell)
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/addresses/jobs/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/addresses/jobs/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -79,7 +81,7 @@ address_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/address-settings/%23/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/address-settings/%23/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -103,7 +105,7 @@ link_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/services/frontend/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/services/frontend/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -129,7 +131,7 @@ service_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"/brokers/build-infra/services/frontend/bindings/frontend-2da6/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/brokers/build-infra/services/frontend/bindings/frontend-2da6/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 

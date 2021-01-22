@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Brokerage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic|Ubuntu+Mono:400" type="text/css"/>
+    <link rel="stylesheet" href="/brokerage/main.css" type="text/css"/>
+    <link rel="icon" href="" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" defer="defer">
+    <script type="text/javascript" src="/brokerage/main.js" defer="defer"></script>
+
+
+
+
+  </head>
+
+<body>
+  <header>
+  <div>
+    <nav id="-left-site-nav">
+      <a href="/brokerage/index.html" id="-logotype"><span class="material-icons-outlined">filter_drama</span> Brokerage</a>
+    </nav>
+    <nav id="-right-site-nav">
+      <a href="">Hi, Athena</a>
+    </nav>
+  </div>
+</header>
+<header id="-path-nav">
+  <div>
+
+<nav class="path-nav"><a href="/brokers/index.html">Brokers</a><span class="path-separator">&#8250;</span><a href="/brokers/build-infra/index.html">Broker <span class="name">build-infra</span></a></nav>
+
+  </div>
+</header>
+
+
+  <section>
+    <div>
+
+
+<div class="title-bar">
+  <h1>Broker <span class="name">build-infra</span></h1>
+  <nav>
+    <a href="" class="small-button">Go to the broker console</a>
+    <a href="" class="small-button">Delete</a>
+  </nav>
+</div>
+
+<div class="tabs">
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#details">Details</a>
+    <a href="#clients">Clients</a>
+    <a href="#addresses">Addresses</a>
+    <a href="#address-settings">Address settings</a>
+  </nav>
+  <div id="overview">
+    <h2>Connecting to this broker</h2>
+
+    <ol>
+      <li>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+        <nav>
+          <a href="" class="small-button">Download the broker certificate</a>
+        </nav>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget maximus lacinia lorem nulla auctor massa vitae ultricies varius curabitur.</p>
+
+        <pre>$ keytool -import -alias broker -keystore ~/client.ts -file <i>&lt;broker-certificate-file&gt;</i></pre>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+        <pre>$ keytool -genkey -alias broker -keyalg RSA -keystore ~/client.ks
+$ keytool -export -alias broker -keystore ~/client.ks -file <i>&lt;client-certificate-file&gt;</i></pre>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget.</p>
+
+        <nav>
+          <a href="" class="small-button">Upload the client certificate</a>
+        </nav>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget maximus lacinia lorem nulla auctor massa vitae ultricies varius curabitur consectetur lacus sapien a lacinia urna tempus quis vestibulum vitae augue non augue lobortis semper nullam fringilla odio quis ligula consequat condimentum integer tempus sem.</p>
+
+        <pre>AMQP: <a href="">amqps://build-infra.example.net:443?transport.keyStoreLocation=~/client.ks&amp;transport.keyStorePassword=&lt;password&gt;&amp;transport.trustStoreLocation=~/client.ts&amp;transport.trustStorePassword=&lt;password&gt</a>
+Core: tcp://build-infra.example.net...
+MQTT: tcp://build-infra.example.net...</pre>
+      </li>
+    </ol>
+
+    <h2>Sending and receiving messages</h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vestibulum enim urna ornare pellentesque felis eget maximus lacinia lorem nulla auctor massa vitae ultricies varius curabitur consectetur lacus sapien a lacinia urna tempus quis vestibulum vitae augue non augue lobortis semper nullam fringilla odio quis ligula consequat condimentum integer tempus sem.</p>
+
+    <pre>$ bin/artemis producer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i>
+$ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i></pre>
+
+</pre>
+  </div>
+  <div id="details">
+    <div class="section-bar-top">
+      <h2>Properties</h2>
+      <nav>
+        <a href="" class="small-button">Edit properties</a>
+      </nav>
+    </div>
+
+    <table class="properties"><tbody><tr><td>Name</td><td>build-infra</td></tr><tr><td>Status</td><td>Active</td></tr><tr><td>Size</td><td>2</td></tr><tr><td>Persistence enabled</td><td>Yes</td></tr><tr><td>Message migration enabled</td><td>Yes</td></tr><tr><td>Image</td><td>registry.redhat.io/amq7/amq-broker:7.8</td></tr><tr><td>Created</td><td>4 hours ago</td></tr></tbody></table>
+  </div>
+  <div id="clients">
+    <div class="section-bar-top">
+      <h2>Clients</h2>
+      <nav>
+        <a href="" class="small-button">Upload a client certificate</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Name</th><th>Connections</th><th>Expires</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-36cd</a></td><td>12</td><td>12/21/2021</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-4ed8</a></td><td>2</td><td>Never</td><td>4 hours ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-e0d7</a></td><td>0</td><td>-</td><td>1/1/2020</td></tr></tbody></table>
+  </div>
+  <div id="addresses">
+    <div class="section-bar-top">
+      <h2>Addresses</h2>
+      <nav>
+        <a href="" class="small-button">Create an address</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Name</th><th>Routing type</th><th>Auto-create queues?</th><th>Auto-delete queues?</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">jobs</a></td><td>Anycast</td><td>Yes</td><td>Yes</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">notifications</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>4 hours ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">agents.alpha</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>1/1/2020</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">agents.beta</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>1/1/2020</td></tr></tbody></table>
+  </div>
+  <div id="address-settings">
+    <div class="section-bar-top">
+      <h2>Address settings</h2>
+      <nav>
+        <a href="" class="small-button">Create an address setting</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Address match</th><th>Routing type</th><th>Auto-create addresses?</th><th>Auto-create queues?</th><th>Auto-delete queues?</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/address-settings/%23/index.html">#</a></td><td>Anycast</td><td>Yes</td><td>Yes</td><td>Yes</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/address-settings/%23/index.html">agents.#</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>No</td><td>3/15/2020</td></tr></tbody></table>
+  </div>
+</div>
+
+
+    </div>
+  </section>
+
+  <footer>
+  <div>
+  </div>
+</footer>
+
+</body>
+
+
+</html>

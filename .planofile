@@ -39,3 +39,17 @@ def generate_view_stub(app, type_name, object_name, output_path):
     type_title = capitalize(type_name)
 
     write(output_path, view_html.format(**locals()))
+
+@command(args=(CommandArgument("verbose", help="Print detailed logging to the console"),))
+def publish(app, verbose=False):
+    """Publish site output"""
+
+    ENV["SITE_URL"] = "/brokerage"
+
+    with project_env():
+        args = ["render", site.config_dir, site.input_dir, "docs", "--force"]
+
+        if verbose:
+            args.append("--verbose")
+
+        TransomCommand().main(args)
