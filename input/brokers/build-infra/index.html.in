@@ -21,7 +21,7 @@ title: Broker <span class="name">build-infra</span>
   <div id="overview">
     <h2>Status</h2>
 
-    <p>XXX</p>
+    <img src="/images/status.png" style="width: 90%;"/>
 
     <h2>Connecting to this broker</h2>
 
