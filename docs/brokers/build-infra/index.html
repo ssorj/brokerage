@@ -51,8 +51,8 @@
     <a href="#overview">Overview</a>
     <a href="#configuration">Configuration</a>
     <a href="#clients">Clients</a>
-    <a href="#addresses">Addresses</a>
-    <a href="#address-settings">Address settings</a>
+    <a href="#queues">Queues</a>
+    <a href="#topics">Topics</a>
   </nav>
   <div id="overview">
     <h2>Status</h2>
@@ -129,26 +129,49 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
 
     <table><tbody><tr><th>Name</th><th>Connections</th><th>Expires</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-36cd</a></td><td>12</td><td>12/21/2021</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-4ed8</a></td><td>2</td><td>Never</td><td>4 hours ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/clients/build-infra-36cd/index.html">build-infra-e0d7</a></td><td>0</td><td>-</td><td>1/1/2020</td></tr></tbody></table>
   </div>
-  <div id="addresses">
+  <div id="queues">
     <div class="section-bar-top">
-      <h2>Addresses</h2>
+      <h2>Queues</h2>
       <nav>
-        <a href="" class="small-button">Create an address</a>
+        <a href="" class="small-button">Create a queue</a>
+      </nav>
+    </div>
+
+    <table><tbody><tr><th>Name</th><th>Routing type</th><th>Auto-create queues?</th><th>Auto-delete queues?</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">jobs</a></td><td>Anycast</td><td>Yes</td><td>Yes</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">commands</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>1/1/2020</td></tr></tbody></table>
+  </div>
+
+  <div id="topics">
+    <div class="section-bar-top">
+      <h2>Topics</h2>
+      <nav>
+        <a href="" class="small-button">Create a topic</a>
       </nav>
     </div>
 
     <table><tbody><tr><th>Name</th><th>Routing type</th><th>Auto-create queues?</th><th>Auto-delete queues?</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">jobs</a></td><td>Anycast</td><td>Yes</td><td>Yes</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">notifications</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>4 hours ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">agents.alpha</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>1/1/2020</td></tr><tr><td><a href="/brokerage/brokers/build-infra/addresses/jobs/index.html">agents.beta</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>1/1/2020</td></tr></tbody></table>
   </div>
-  <div id="address-settings">
-    <div class="section-bar-top">
-      <h2>Address settings</h2>
-      <nav>
-        <a href="" class="small-button">Create an address setting</a>
-      </nav>
-    </div>
 
-    <table><tbody><tr><th>Address match</th><th>Routing type</th><th>Auto-create addresses?</th><th>Auto-create queues?</th><th>Auto-delete queues?</th><th>Created</th></tr><tr><td><a href="/brokerage/brokers/build-infra/address-settings/%23/index.html">#</a></td><td>Anycast</td><td>Yes</td><td>Yes</td><td>Yes</td><td>3 minutes ago</td></tr><tr><td><a href="/brokerage/brokers/build-infra/address-settings/%23/index.html">agents.#</a></td><td>Multicast</td><td>Yes</td><td>Yes</td><td>No</td><td>3/15/2020</td></tr></tbody></table>
-  </div>
+  <!-- <div id="addresses"> -->
+  <!--   <div class="section-bar-top"> -->
+  <!--     <h2>Addresses</h2> -->
+  <!--     <nav> -->
+  <!--       <a href="" class="small-button">Create an address</a> -->
+  <!--     </nav> -->
+  <!--   </div> -->
+
+  <!--   address_table -->
+  <!-- </div> -->
+  <!-- <div id="address-settings"> -->
+  <!--   <div class="section-bar-top"> -->
+  <!--     <h2>Address settings</h2> -->
+  <!--     <nav> -->
+  <!--       <a href="" class="small-button">Create an address setting</a> -->
+  <!--     </nav> -->
+  <!--   </div> -->
+
+  <!--   address_setting_table -->
+  <!-- </div> -->
+
 </div>
 
 

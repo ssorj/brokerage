@@ -15,8 +15,8 @@ title: Broker <span class="name">build-infra</span>
     <a href="#overview">Overview</a>
     <a href="#configuration">Configuration</a>
     <a href="#clients">Clients</a>
-    <a href="#addresses">Addresses</a>
-    <a href="#address-settings">Address settings</a>
+    <a href="#queues">Queues</a>
+    <a href="#topics">Topics</a>
   </nav>
   <div id="overview">
     <h2>Status</h2>
@@ -93,24 +93,47 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
 
     {{client_table}}
   </div>
-  <div id="addresses">
+  <div id="queues">
     <div class="section-bar-top">
-      <h2>Addresses</h2>
+      <h2>Queues</h2>
       <nav>
-        <a href="" class="small-button">Create an address</a>
+        <a href="" class="small-button">Create a queue</a>
       </nav>
     </div>
 
-    {{address_table}}
+    {{queue_table}}
   </div>
-  <div id="address-settings">
+
+  <div id="topics">
     <div class="section-bar-top">
-      <h2>Address settings</h2>
+      <h2>Topics</h2>
       <nav>
-        <a href="" class="small-button">Create an address setting</a>
+        <a href="" class="small-button">Create a topic</a>
       </nav>
     </div>
 
-    {{address_setting_table}}
+    {{topic_table}}
   </div>
+
+  <!-- <div id="addresses"> -->
+  <!--   <div class="section-bar-top"> -->
+  <!--     <h2>Addresses</h2> -->
+  <!--     <nav> -->
+  <!--       <a href="" class="small-button">Create an address</a> -->
+  <!--     </nav> -->
+  <!--   </div> -->
+
+  <!--   address_table -->
+  <!-- </div> -->
+  <!-- <div id="address-settings"> -->
+  <!--   <div class="section-bar-top"> -->
+  <!--     <h2>Address settings</h2> -->
+  <!--     <nav> -->
+  <!--       <a href="" class="small-button">Create an address setting</a> -->
+  <!--     </nav> -->
+  <!--   </div> -->
+
+  <!--   address_setting_table -->
+  <!-- </div> -->
+
 </div>

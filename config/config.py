@@ -63,12 +63,21 @@ headings = "Name", "Routing type", "Auto-create queues?", "Auto-delete queues?",
 
 data = (
     ("jobs", "Anycast", "Yes", "Yes", "3 minutes ago"),
+    ("commands", "Multicast", "Yes", "Yes", "1/1/2020"),
+)
+
+queue_table = html_table(data, headings=headings, cell_fn=cell)
+
+headings = "Name", "Routing type", "Auto-create queues?", "Auto-delete queues?", "Created"
+
+data = (
+    ("jobs", "Anycast", "Yes", "Yes", "3 minutes ago"),
     ("notifications", "Multicast", "Yes", "Yes", "4 hours ago"),
     ("agents.alpha", "Multicast", "Yes", "Yes", "1/1/2020"),
     ("agents.beta", "Multicast", "Yes", "Yes", "1/1/2020"),
 )
 
-address_table = html_table(data, headings=headings, cell_fn=cell)
+topic_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "jobs"),
