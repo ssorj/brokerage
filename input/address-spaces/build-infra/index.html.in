@@ -23,55 +23,68 @@ title: Address space <span class="name">build-infra</span>
 
     <img src="{{site_url}}/images/status.png" style="width: 200px;"/>
 
-    <h2>Connecting to this address space</h2>
+    <h2>Connect using Qtools</h2>
+
+    <p>{{lipsum(15)}}</p>
 
     <ol>
       <li>
         <p>{{lipsum(15)}}</p>
 
         <nav>
-          <a class="small-button">Download the server certificate</a>
+          <a class="small-button">Download Qtools</a>
         </nav>
-
-        <p>{{lipsum(25)}}</p>
-
-        <pre>$ keytool -import -alias server -keystore ~/client.ts -file <i>&lt;server-certificate-file&gt;</i></pre>
 
         <p></p>
       </li>
 
       <li>
-        <p>{{lipsum(15)}}</p>
-
-        <pre>$ keytool -genkey -alias server -keyalg RSA -keystore ~/client.ks
-$ keytool -export -alias server -keystore ~/client.ks -file <i>&lt;client-certificate-file&gt;</i></pre>
-
         <p>{{lipsum(15)}}</p>
 
         <nav>
-          <a class="small-button">Upload the client certificate</a>
+          <a class="small-button">Download connect.json</a>
         </nav>
 
         <p></p>
       </li>
 
       <li>
-        <p>{{lipsum()}}</p>
+        <p>{{lipsum(15)}}</p>
 
-        <pre>AMQP: <a href="">amqps://build-infra.example.net:443?transport.keyStoreLocation=~/client.ks&amp;transport.keyStorePassword=&lt;password&gt;&amp;transport.trustStoreLocation=~/client.ts&amp;transport.trustStorePassword=&lt;password&gt</a>
-Core: tcp://build-infra.example.net...
-MQTT: tcp://build-infra.example.net...</pre>
+        <pre>$ export MESSAGING_CONNECT_FILE=/path/to/connect.json
+$ qsend greetings "Hello"
+$ qreceive greetings
+Hello</pre>
+
+        <p></p>
       </li>
     </ol>
 
-    <h2>Sending and receiving messages</h2>
+    <h2>Connect using JMS</h2>
 
-    <p>{{lipsum()}}</p>
+    <p>{{lipsum(15)}}</p>
 
-    <pre>$ bin/artemis producer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i>
-$ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;address&gt;</i></pre>
+    <ol>
+      <li>
+        <p>{{lipsum(15)}}</p>
 
-</pre>
+        <nav>
+          <a class="small-button">Download connection properties</a>
+        </nav>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>{{lipsum(15)}}</p>
+
+        <p></p>
+      </li>
+
+      <li>
+        <p>{{lipsum(15)}}</p>
+      </li>
+    </ol>
   </div>
   <div id="details">
     <div class="section-bar-top">
