@@ -1,19 +1,19 @@
 ---
-title: Broker <span class="name">build-infra</span>
+title: Address space <span class="name">build-infra</span>
 ---
 
 <div class="title-bar">
   <h1>{{page.title}}</h1>
   <nav>
-    <a href="" class="small-button">Go to the broker console</a>
-    <a href="" class="small-button">Delete</a>
+    <a class="small-button">Go to the broker console</a>
+    <a class="small-button">Delete</a>
   </nav>
 </div>
 
 <div class="tabs">
   <nav>
     <a href="#overview">Overview</a>
-    <a href="#configuration">Configuration</a>
+    <a href="#details">Details</a>
     <a href="#clients">Clients</a>
     <a href="#queues">Queues</a>
     <a href="#topics">Topics</a>
@@ -21,21 +21,21 @@ title: Broker <span class="name">build-infra</span>
   <div id="overview">
     <h2>Status</h2>
 
-    <img src="{{site_url}}/images/status.png" style="width: 90%;"/>
+    <img src="{{site_url}}/images/status.png" style="width: 200px;"/>
 
-    <h2>Connecting to this broker</h2>
+    <h2>Connecting to this address space</h2>
 
     <ol>
       <li>
         <p>{{lipsum(15)}}</p>
 
         <nav>
-          <a href="" class="small-button">Download the broker certificate</a>
+          <a class="small-button">Download the server certificate</a>
         </nav>
 
         <p>{{lipsum(25)}}</p>
 
-        <pre>$ keytool -import -alias broker -keystore ~/client.ts -file <i>&lt;broker-certificate-file&gt;</i></pre>
+        <pre>$ keytool -import -alias server -keystore ~/client.ts -file <i>&lt;server-certificate-file&gt;</i></pre>
 
         <p></p>
       </li>
@@ -43,13 +43,13 @@ title: Broker <span class="name">build-infra</span>
       <li>
         <p>{{lipsum(15)}}</p>
 
-        <pre>$ keytool -genkey -alias broker -keyalg RSA -keystore ~/client.ks
-$ keytool -export -alias broker -keystore ~/client.ks -file <i>&lt;client-certificate-file&gt;</i></pre>
+        <pre>$ keytool -genkey -alias server -keyalg RSA -keystore ~/client.ks
+$ keytool -export -alias server -keystore ~/client.ks -file <i>&lt;client-certificate-file&gt;</i></pre>
 
         <p>{{lipsum(15)}}</p>
 
         <nav>
-          <a href="" class="small-button">Upload the client certificate</a>
+          <a class="small-button">Upload the client certificate</a>
         </nav>
 
         <p></p>
@@ -73,21 +73,21 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
 
 </pre>
   </div>
-  <div id="configuration">
+  <div id="details">
     <div class="section-bar-top">
-      <h2>Settings</h2>
+      <h2>Details</h2>
       <nav>
-        <a href="" class="small-button">Edit settings</a>
+        <a class="small-button">Edit settings</a>
       </nav>
     </div>
 
-    {{broker_properties}}
+    {{address_space_properties}}
   </div>
   <div id="clients">
     <div class="section-bar-top">
       <h2>Clients</h2>
       <nav>
-        <a href="" class="small-button">Upload a client certificate</a>
+        <a class="small-button">Upload a client certificate</a>
       </nav>
     </div>
 
@@ -97,7 +97,7 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
     <div class="section-bar-top">
       <h2>Queues</h2>
       <nav>
-        <a href="" class="small-button">Create a queue</a>
+        <a class="small-button">Create a queue</a>
       </nav>
     </div>
 
@@ -108,32 +108,11 @@ $ bin/artemis consumer --url <i>&lt;connection-url&gt;</i> --destination <i>&lt;
     <div class="section-bar-top">
       <h2>Topics</h2>
       <nav>
-        <a href="" class="small-button">Create a topic</a>
+        <a class="small-button">Create a topic</a>
       </nav>
     </div>
 
     {{topic_table}}
   </div>
-
-  <!-- <div id="addresses"> -->
-  <!--   <div class="section-bar-top"> -->
-  <!--     <h2>Addresses</h2> -->
-  <!--     <nav> -->
-  <!--       <a href="" class="small-button">Create an address</a> -->
-  <!--     </nav> -->
-  <!--   </div> -->
-
-  <!--   address_table -->
-  <!-- </div> -->
-  <!-- <div id="address-settings"> -->
-  <!--   <div class="section-bar-top"> -->
-  <!--     <h2>Address settings</h2> -->
-  <!--     <nav> -->
-  <!--       <a href="" class="small-button">Create an address setting</a> -->
-  <!--     </nav> -->
-  <!--   </div> -->
-
-  <!--   address_setting_table -->
-  <!-- </div> -->
 
 </div>

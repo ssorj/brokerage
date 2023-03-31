@@ -11,35 +11,30 @@ def path_nav(page):
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/address-spaces/build-infra/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Status", "Size", "Created"
+headings = "Name", "Clients", "Queues", "Topics", "Created"
 
 data = (
-    ("build-infra", "Active", 2, "4 hours ago"),
-    ("order-processing", "Active", 3, "3 days ago"),
-    ("notifications", "Disabled", 1, "1/8/2020"),
+    ("build-infra", 3, 2, 3, "4 hours ago"),
+    ("order-processing", 4, 3, 0, "3 days ago"),
+    ("cicd-pipeline", 12, 1, 1, "1/8/2020"),
 )
 
-broker_table = html_table(data, headings=headings, cell_fn=cell)
+address_space_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "build-infra"),
-    ("Status", "Active"),
-    ("Size", 2),
-    ("Persistence enabled", "Yes"),
-    ("Message migration enabled", "Yes"),
-    ("Image", "registry.redhat.io/amq7/amq-broker:7.8"),
     ("Created", "4 hours ago"),
 )
 
-broker_properties = html_table(props, class_="properties")
+address_space_properties = html_table(props, class_="properties")
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/clients/build-infra-36cd/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/address-spaces/build-infra/clients/build-infra-36cd/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
@@ -55,101 +50,45 @@ client_table = html_table(data, headings=headings, cell_fn=cell)
 
 def cell(column_index, value):
     if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/addresses/jobs/index.html\">{value}</a>"
+        value = f"<a href=\"{site_url}/address-spaces/build-infra/queues/jobs/index.html\">{value}</a>"
 
     return f"<td>{value}</td>"
 
-headings = "Name", "Routing type", "Auto-create queues?", "Auto-delete queues?", "Created"
+headings = "Name", "Created"
 
 data = (
-    ("jobs", "Anycast", "Yes", "Yes", "3 minutes ago"),
-    ("commands", "Multicast", "Yes", "Yes", "1/1/2020"),
+    ("jobs", "3 minutes ago"),
+    ("commands", "1/1/2020"),
 )
 
 queue_table = html_table(data, headings=headings, cell_fn=cell)
 
-headings = "Name", "Routing type", "Auto-create queues?", "Auto-delete queues?", "Created"
+def cell(column_index, value):
+    if column_index == 0:
+        value = f"<a href=\"{site_url}/address-spaces/build-infra/topics/notifications/index.html\">{value}</a>"
+
+    return f"<td>{value}</td>"
+
+headings = "Name", "Created"
 
 data = (
-    ("jobs", "Anycast", "Yes", "Yes", "3 minutes ago"),
-    ("notifications", "Multicast", "Yes", "Yes", "4 hours ago"),
-    ("agents.alpha", "Multicast", "Yes", "Yes", "1/1/2020"),
-    ("agents.beta", "Multicast", "Yes", "Yes", "1/1/2020"),
+    ("notifications", "4 hours ago"),
+    ("agents.alpha", "1/1/2020"),
+    ("agents.beta", "1/1/2020"),
 )
 
 topic_table = html_table(data, headings=headings, cell_fn=cell)
 
 props = (
     ("Name", "jobs"),
-    ("Routing type", "Anycast"),
-    ("Auto-create queues?", "Yes"),
-    ("Auto-delete queues?", "Yes"),
     ("Created", "3 minutes ago"),
 )
 
-address_properties = html_table(props, class_="properties")
-
-def cell(column_index, value):
-    if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/address-settings/%23/index.html\">{value}</a>"
-
-    return f"<td>{value}</td>"
-
-headings = "Address match", "Routing type", "Auto-create addresses?", "Auto-create queues?", "Auto-delete queues?", "Created"
-
-data = (
-    ("#", "Anycast", "Yes", "Yes", "Yes", "3 minutes ago"),
-    ("agents.#", "Multicast", "Yes", "Yes", "No", "3/15/2020"),
-)
-
-address_setting_table = html_table(data, headings=headings, cell_fn=cell)
+queue_properties = html_table(props, class_="properties")
 
 props = (
-    ("Name", "na-east-d45e"),
-    ("Status", "OK"),
-    ("Site", "na-east (OpenShift)"),
-    ("Created", "3 minutes ago",),
+    ("Name", "notifications"),
+    ("Created", "4 hours ago"),
 )
 
-link_properties = html_table(props, class_="properties")
-
-def cell(column_index, value):
-    if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/services/frontend/index.html\">{value}</a>"
-
-    return f"<td>{value}</td>"
-
-headings = "Name", "Status", "Bindings", "Created"
-
-data = (
-    ("frontend", "OK", 2, "3 minutes ago"),
-    ("inventory", "OK", 1, "4 hours ago"),
-    ("orders", "OK", 1, "2 days ago"),
-    ("postgres", "OK", 1, "3/15/2020"),
-    ("reviews", "Error", 1, "3/15/2020"),
-)
-
-service_table = html_table(data, headings=headings, cell_fn=cell)
-
-props = (
-    ("Name", "frontend"),
-    ("Status", "OK"),
-    ("Created", "3 minutes ago",),
-)
-
-service_properties = html_table(props, class_="properties")
-
-def cell(column_index, value):
-    if column_index == 0:
-        value = f"<a href=\"{site_url}/brokers/build-infra/services/frontend/bindings/frontend-2da6/index.html\">{value}</a>"
-
-    return f"<td>{value}</td>"
-
-headings = "Name", "Status", "Target", "Site", "Created"
-
-data = (
-    ("frontend-2da6", "OK", "deployment/frontend", "na-east (OpenShift)", "2 days ago"),
-    ("frontend-45cc", "Error", "container/frontend", "na-west (Podman)", "1 day ago"),
-)
-
-binding_table = html_table(data, headings=headings, cell_fn=cell)
+topic_properties = html_table(props, class_="properties")

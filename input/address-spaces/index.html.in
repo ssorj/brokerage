@@ -1,0 +1,12 @@
+---
+title: Address spaces
+---
+
+<div class="title-bar">
+  <h1>Address spaces</h1>
+  <nav>
+    <a href="" class="small-button">Create address space</a>
+  </nav>
+</div>
+
+{{address_space_table}}
